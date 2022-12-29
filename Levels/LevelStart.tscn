@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player/PlayerMovementData.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+JUMP_FORCE = -160
+JUMP_RELEASE_FORCE = -40
+MAX_SPEED = 75
+ACCELERATION = 10
+FRICTION = 10
+GRAVITY = 5
+ADDITION_FALL_GRAVITY = 2
+CLIMB_SPEED = 50
+DOUBLE_JUMP_COUNT = 0
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 4 )
+
+[node name="Level" instance=ExtResource( 2 )]
+
+[node name="Player" parent="." index="0"]
+position = Vector2( 171, 90 )
+moveData = SubResource( 1 )
+
+[node name="Camera2D" parent="." index="1"]
+position = Vector2( 162, 126 )
+offset = Vector2( 0, -140 )
+
+[node name="Timer" parent="." index="2"]
+one_shot = true
+
+[node name="TileMap" parent="." index="3" instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -589831, 1, 65537, -589830, 1, 65539, -655335, 1, 65537, -655334, 1, 65539, -524295, 1, 393217, -524294, 1, 393219, -589799, 1, 393217, -589798, 1, 393219, -458759, 1, 393217, -458758, 1, 393219, -524263, 1, 393217, -524262, 1, 393219, -393223, 1, 393217, -393222, 1, 393219, -458727, 1, 393217, -458726, 1, 393219, -327687, 1, 393217, -327686, 1, 393219, -393191, 1, 393217, -393190, 1, 393219, -262151, 1, 393217, -262150, 1, 393219, -327655, 1, 393217, -327654, 1, 393219, -196615, 1, 393217, -196614, 1, 393219, -262119, 1, 393217, -262118, 1, 393219, -131079, 1, 393217, -131078, 1, 65540, -131077, 1, 65539, -196584, 1, 65537, -196583, 1, 65541, -196582, 1, 393219, -65543, 1, 458753, -65542, 1, 5, -65541, 1, 393219, -131048, 1, 393217, -131047, 1, 4, -131046, 1, 458755, -6, 1, 393217, -5, 1, 393219, -65512, 1, 393217, -65511, 1, 393219, 65530, 1, 393217, 65531, 1, 65540, 65532, 1, 65539, 23, 1, 65537, 24, 1, 65541, 25, 1, 393219, 131066, 1, 458753, 131067, 1, 5, 131068, 1, 393219, 65559, 1, 393217, 65560, 1, 4, 65561, 1, 458755, 196603, 1, 393217, 196604, 1, 65540, 196605, 1, 65539, 131094, 1, 65537, 131095, 1, 65541, 131096, 1, 393219, 262139, 1, 458753, 262140, 1, 5, 262141, 1, 65540, 262142, 1, 65539, 196629, 1, 65537, 196630, 1, 65541, 196631, 1, 4, 196632, 1, 458755, 327676, 1, 458753, 327677, 1, 5, 327678, 1, 65540, 327679, 1, 65539, 262164, 1, 65537, 262165, 1, 65541, 262166, 1, 4, 262167, 1, 458755, 393213, 1, 458753, 393214, 1, 5, 393215, 1, 65540, 327680, 1, 65538, 327681, 1, 65538, 327682, 1, 65538, 327683, 1, 65538, 327684, 1, 65538, 327685, 1, 65538, 327686, 1, 65538, 327687, 1, 65538, 327688, 1, 65538, 327689, 1, 65538, 327690, 1, 65538, 327691, 1, 65538, 327692, 1, 65538, 327693, 1, 65538, 327694, 1, 65538, 327695, 1, 65538, 327696, 1, 65538, 327697, 1, 65538, 327698, 1, 65538, 327699, 1, 65538, 327700, 1, 65541, 327701, 1, 4, 327702, 1, 458755, 458750, 1, 458753, 458751, 1, 458754, 393216, 1, 458754, 393217, 1, 5, 393218, 1, 393218, 393219, 1, 393218, 393220, 1, 393218, 393221, 1, 393218, 393222, 1, 393218, 393223, 1, 393218, 393224, 1, 393218, 393225, 1, 393218, 393226, 1, 393218, 393227, 1, 393218, 393228, 1, 393218, 393229, 1, 393218, 393230, 1, 393218, 393231, 1, 393218, 393232, 1, 393218, 393233, 1, 393218, 393234, 1, 4, 393235, 1, 458754, 393236, 1, 458754, 393237, 1, 458755, 458753, 1, 458753, 458754, 1, 458754, 458755, 1, 458754, 458756, 1, 458754, 458757, 1, 458754, 458758, 1, 458754, 458759, 1, 458754, 458760, 1, 458754, 458761, 1, 458754, 458762, 1, 458754, 458763, 1, 458754, 458764, 1, 458754, 458765, 1, 458754, 458766, 1, 458754, 458767, 1, 458754, 458768, 1, 458754, 458769, 1, 458754, 458770, 1, 458755 )
+
+[node name="Label" type="Label" parent="." index="4"]
+margin_left = -30.0
+margin_top = -164.0
+margin_right = 386.0
+margin_bottom = -118.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "third time's a charm"
+
+[node name="Label2" type="Label" parent="." index="5"]
+margin_left = -9.0
+margin_top = -45.0
+margin_right = 144.0
+margin_bottom = 168.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "use the arrow keys to move"
+autowrap = true
+
+[node name="Label3" type="Label" parent="." index="6"]
+margin_left = 225.0
+margin_top = -45.0
+margin_right = 414.0
+margin_bottom = 6.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Press space to enter doors"
+autowrap = true
+
+[node name="Label4" type="Label" parent="." index="7"]
+margin_left = -30.0
+margin_top = -164.0
+margin_right = 386.0
+margin_bottom = -118.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "third time's a charm"
+
+[node name="Label5" type="Label" parent="." index="8"]
+margin_left = -9.0
+margin_top = -45.0
+margin_right = 144.0
+margin_bottom = 168.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "use the arrow keys to move"
+autowrap = true
+
+[node name="Label6" type="Label" parent="." index="9"]
+margin_left = 225.0
+margin_top = -45.0
+margin_right = 414.0
+margin_bottom = 6.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Press space to enter doors"
+autowrap = true
+
+[node name="Door" parent="." index="10" instance=ExtResource( 5 )]
+position = Vector2( 288, 90 )
+target_level_path = "res://Levels/Level1.tscn"
